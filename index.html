@@ -1,278 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content=
-		"width=device-width, initial-scale=1.0">
-	<title>HTML Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>PYQ Website</title>
+
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    /* --main-color:#0b178f; */
+    --main-color:#1e2cc6;
+    /* --text-color:#1c2844; */
+    --text-color:#0b178f;
+
+}
+section{
+    padding: 50px 10%;
+}
+img{
+    width: 100%;
+}
+body{
+    color: var(--text-color);
+}
+*::selection{
+    color: #fff;
+    background: var(--main-color);
+
+}
+
+/* custom scroll bar  */
+html::-webkit-scrollbar{
+    width: 0.5rem;
+
+}
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background:var(--main-color);
+    border-radius: 5rem;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items:center ;
+    justify-content: space-between;
+    background: #fff;
+    padding: 18px 10%;
+    transition: 0.2s;
+
+}
+
+.logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.navbar a:hover{
+    background: var(--text-color);
+    color: #fff;
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+.home{
+    margin-top: 80px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+    align-items: center;
+    gap: 1.5rem;
+}
+.home-text span{
+    font-size: 1.4rem;
+    font-weight: 600;
+
+}
+.home-text h1{
+    font-size: 3.4rem;
+    color: var(--main-color);
+}
+.home-text h2{
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+.home-text p{
+    font-weight: 400;
+ 
+    margin: 0.7rem 0 1rem;
+}
+.home-img{
+    padding: 40px;
+    /* width: 500px; */
+    
+    
+}
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+    gap: 1.5rem;
+}
+.about-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about-title h1{
+    color: var(--main-color);
+    font-size: 1.7rem;
+
+}
+.about-title span ,
+.heading span{
+    border-bottom: 3px solid var(--main-color);
+
+}
+
+
+.about-img{
+    width: 150px;
+    height: 150px;
+    margin-top: 2rem;
+}
+.about-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    background: var(--main-color);
+}
+
+
+.about-text p{
+    text-align: justify;
+    margin: 1rem;
+}
+.btn{
+    display: inline-block;
+    background: var(--text-color);
+    padding: 0.8rem 2rem;
+    color: #fff;
+    font-weight: 500;
+}
+.btn:hover{
+    background: var(--main-color);
+    letter-spacing: 2px;
+    transition:0.2s;
+}
+
+/* .connect{ */
+    /* margin: 50px; */
+  /* padding: 20px; */
+  /* text-align: center; */
+
+  /* padding: 10px;
+  display: flex;
+  background: var(--text-color);
+  color: #fff;
+
+ } */
+ /* .connect .bx{
+    color: #fff;
+    
+   padding-left: 100px;
+ } */
+ .footer{
+  max-width: 968px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  background: var(--main-color);
+
+  color: #fff;
+
+ }
+ .footer .bx{
+color: #fff;
+ }
+
+    </style>
 </head>
-
 <body>
-	<!--Header(start)-->
-	<table id="header" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="cyan">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="90%" align="center">
-					<tr>
-						<td>
-							
+      <!-- Header  -->
+      <header>
+        <a href="#" class="logo" style="font-family: 'Times New Roman', Times, serif; background: var(--main-color); color: #fff;">&#9812;SKM&#9812;</a>
+    <div class="bx bx-menu" id="menu-icon"></div>
 
-						</td>
+    <ul class="navbar section">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#download">Download</a></li>
+       
+    </ul>
+    </header>
 
-						<td>
-							<font face="Comic sans MS" size="6">
-								<b>HTML project</b>
-							</font>
-						</td>
+   <!-- Home  -->
+   <section class="home" id="home">
+    <div class="home-text">
+        <span>Hello,my name is</span>
+        <h1>Shashikant Mishra</h1>
+        <h2>&#9737;Web Developer <br>&#9737; Video Editor  <br>&#9737; Programmer</h2>
+        <p>I am a third year student at Madan Malaviya University of Technology, Gorakhpur. I am inspired by the extent to which technology can impact our lives and therefore I have a keen desire to learn about it as much as possible.</p>
+       
+    </div>
+        <div class="home-img">
+            <img src="./profile.jpg" alt="">
+        </div>
+       
+   </section>
 
-						<td width="15%">
-							
-						</td>
+<!-- About  -->
+<section class="about" id="about">
+    <div class="about-title">
+        <h1><span>Purpose of this Website</span></h1>
+  
+        <div class="about-img">
+            <img src="./mmmut.jpg" alt="">
+        </div>
+    </div>
+    <div class="about-text">
+        <p>This website has been created because from the academic year 2021 onwards new education policy has been implemented due to which the syllabus has slightly changed also new subjects have been introduced and few subjects have been removed. Therefore, I have designed this website where you can get all the pyqs of the newly introduced subjects from year 2021 onwards. You can download the pyqs and prepare well for your upcoming semester exams.
+            <br>
+            -Thank you
+        </p>
+    </div>
+</section>
 
-						
+<!-- Download  -->
+<section class="download" id="download">
 
-					
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Header(end)-->
+    <h1 >Click on the button to download:</h1>
+    <br>
+   
+        <h2>CSE Department:</h2>
+        <a href="https://drive.google.com/drive/folders/1Gtf9zi5rsozp0N66VPWmpPYnk6GnkYVC?usp=sharing" class="btn">
+        Download Now 
+    </a>
 
-	<!--Home(start)-->
-	<table id="home" border="1" width="100%"
-		cellpadding="20" cellspacing="0" bgcolor="black">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="90%" align="center">
-					<tr>
-						<td align="center" valign="middle">
-							<h3>
-								<font face="Times New Roman"
-									size="6" color="#ffffff">
-									Hello Juniors! A very warm welcome to this page. To download the pyq's, scroll down.
-								</font>
-							</h3>
+    <!-- connect  -->
 
-							<h2>
-								<font face="Verdana" size="6"
-									color="#4CAF50">
-									<!-- Freelance Programmer -->
-								</font>
-							</h2>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Home(end)-->
+    <div class="footer">
+        <p>Connect with me:</p>
+        <a href="https://www.linkedin.com/in/shashikant-mishra-136588281" ><i class='bx bxl-linkedin-square'></i></a>
+      <a href="mailto: 2001kanshashi@gmailcom"><i class='bx bx-envelope'></i></a>
+       
+    </div>
 
+    
+ 
 
-	<!--About(start)-->
-	<table id="about" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="black">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="80%" align="center">
-					<tr>
-						<td height="180" align="center"
-							valign="middle" colspan="2">
-							<font face="Verdana" size="7"
-								color="cyan">
-								About Me
-							</font>
-							<hr color="cyan" width="200">
-						</td>
-					</tr>
-
-					<tr>
-						<td width="40%">
-							<img src="./20220309_074646.jpg" height ="300" width="100">
-						</td>
-
-						<td width="60%">
-							<font face="Verdana" size="4"
-								color="white">
-								Thanks for your interest, here
-								is a quick story of me and this
-								website.
-								<hr color="black">
-								My name is Shashikant Mishra,B.Tech IInd year, CSE, section B.
-                              
-                                I am an enthusiastic programmer and a curious learner. My areas of interest are competitive programming and web development.
-                     
-                                <hr>
-                                <br>
-                                One of the major reason to create this website is that you wont find these question paper anywhere else because from 2021 onwards there has 
-                                been a change in the education policy ,new subjects has been introduced and a lot more changes have occured so far in MMMUT. So the questions paper 
-                            before 2021 
-                                 
-                                are not of much use. So I am providing you with the notes and question papers according to the latest curriculum that will boost your preparation and 
-								help to score good cgpa in your 
-                                semester 
-                                exams.
-								<hr>
-								Please note that you will get all the previous year papers upto final here on this website so it is requested that you save this website. The process may take some time.Thank you for your patience.All the best.
-
-								<hr color="black">
-
-							
-							</font>
-						</td>
-					</tr>
-				</table>
-				<hr color="black">
-				<hr color="black">
-				<hr color="black">
-			</td>
-		</tr>
-	</table>
-	<!--About(end)-->
-
-
-	<!--Projects(start)-->
-	<table id="projects" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="#c2c0c3">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="80%" align="center">
-					<tr>
-						<td height="180" align="center"
-							valign="middle" colspan="2">
-							<font face="Verdana" size="7"
-								color="black">
-								Previous Year Question Papers
-							</font>
-							<hr color="black" >
-						</td>
-					</tr>
-
-					<tr>
-						<td height="10">
-							<font face="Times New Roman"
-								size="5" color="black">
-								<ul>
-									
-
-									<li>
-										<hr color="#c2c0c3">
-									
-										<a href="https://drive.google.com/drive/folders/1RVxAl9ZwrqzqZUfxu7Zj5ou4LDkS7WeA?usp=share_link" style="text-decoration:none"
-											color="#c2c0c3">
-                                            CSE Department
-										</a>
-										<font face="Times New Roman"
-										      size="5" color="black">(Dowload here)</font>
-									</li>
-
-									
-								</ul>
-								<hr color="#c2c0c3">
-								<hr color="#c2c0c3">
-								<hr color="#c2c0c3">
-								<hr color="#c2c0c3">
-							</font>
-						</td>
-
-						
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Projects(end)-->
-
-	
-
-
-	<!--Footer1(start)-->
-	<table id="footer" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="cyan">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="90%" align="center">
-					<tr>
-						<td width="13%" valign="top">
-							<b>LinkedIn</b>
-							<a href="https://www.linkedin.com/in/shashikant-mishra-673751229" style="text-decoration:none">
-								➲
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-					
-
-						<td width="13%" valign="top">
-							<b>Insta</b>
-							<a href="https://www.instagram.com/skm_the_dreamer" style="text-decoration:none">
-								➲
-							</a>
-						</td>
-
-						<td>
-							|
-						</td>
-
-						<td width="13%" valign="top">
-							<b>Fb</b>
-							<a href="https://www.facebook.com/profile.php?id=100076914693017" style="text-decoration:none">
-								➲
-							</a>
-						
-						</td>
-
-
-						
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Footer1(end)-->
-
-
-	<!--Footer2(start)-->
-	<table id="footer" border="0" width="100%"
-		cellpadding="0" cellspacing="0" bgcolor="black">
-		<tr>
-			<td>
-				<table border="0" cellpadding="15"
-					cellspacing="0" width="90%" align="center">
-					<tr>
-						<td width="80%" valign="top">
-							<font face="Verdana"
-								color="cyan" size="4">
-							Webpage desgined by : Shashikant Mishra
-							</font>
-						</td>
-
-						<td width="10%">
-							<font face="arial" color="black" size="5">
-								<a href="#header" style="text-decoration:none">
-									<font face="Verdana" color="cyan" size="6">
-										<b>TOP</b>
-									</font>
-								</a>
-							</font>
-						</td>
-					</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-	<!--Footer2(end)-->
-
+</section>
 </body>
-
 </html>
